@@ -13,11 +13,17 @@
   <script type="text/babel">
     class WebsiteTitle extends React.Component {
       render() {
-        return <h2>Lucas and Liz: Adventures With</h2>
+        return <p>Hello, {this.props.greetTarget}!</p>
       }
     }
       ReactDOM.render(
-        <WebsiteTitle/>,
+        <div>
+        <WebsiteTitle greetTarget="Batman"/>
+        <WebsiteTitle greetTarget="Batman"/>
+        <WebsiteTitle greetTarget="Batman"/>
+        <WebsiteTitle greetTarget="Batman"/>
+        <WebsiteTitle greetTarget="Batman"/>
+        </div>,
         document.body
       );
     </script>
