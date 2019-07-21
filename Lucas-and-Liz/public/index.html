@@ -3,24 +3,63 @@
 
 <head>
   <meta charset="utf-8">
-  <title>React! React! React!</title>
-  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <title>Styling in React</title>
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+  <style>
+    #container {
+      padding: 50px;
+      background-color: #FFF;
+    }
+  </style>
 </head>
 
 <body>
+  <div id="container"></div>
   <script type="text/babel">
-    class WebsiteTitle extends React.Component {
+    var destination = document.querySelector("#container");
+   
+    class Letter extends React.Component {
       render() {
-        return <h2>Lucas and Liz: Adventures With</h2>
+        var letterStyle = {
+          padding: 10,
+          margin: 10,
+          backgroundColor: this.props.bgcolor,
+          color: "#333",
+          display: "inline-block",
+          fontFamily: "monospace",
+          fontSize: 32,
+          textAlign: "center"
+        }
+        return(
+          <div style={letterStyle}>
+            {this.props.children}
+          </div>
+        );
       }
     }
-      ReactDOM.render(
-        <WebsiteTitle/>,
-        document.body
-      );
-    </script>
+   
+    ReactDOM.render(
+      <div>
+        <Letter bgcolor="#58B3FF">L</Letter>
+        <Letter bgcolor="#FF605F">U</Letter>
+        <Letter bgcolor="#FFD52E">C</Letter>
+        <Letter bgcolor="#49DD8E">A</Letter>
+        <Letter bgcolor="#AE99FF">S</Letter>
+        <Letter bgcolor="white"> </Letter>
+        <Letter bgcolor="#FF605F">A</Letter>
+        <Letter bgcolor="#FFD52E">N</Letter>
+        <Letter bgcolor="#49DD8E">D</Letter>
+        <Letter bgcolor="white"> </Letter>
+        <Letter bgcolor="#58B3FF">L</Letter>
+        <Letter bgcolor="#FF605F">I</Letter>
+        <Letter bgcolor="#FFD52E">Z</Letter>
+      </div>,
+      destination
+    );
+  </script>
 </body>
 
 </html>
