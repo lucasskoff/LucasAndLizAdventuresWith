@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Letter from './Letter';
+import Letter from './component/Letter';
 import * as serviceWorker from './serviceWorker';
+import ColorPicker from './component/ColorPicker'
 
 var destination = document.querySelector("#container");
    
@@ -21,6 +22,7 @@ var destination = document.querySelector("#container");
         <Letter bgcolor="#58B3FF">L</Letter>
         <Letter bgcolor="#FF605F">I</Letter>
         <Letter bgcolor="#FFD52E">Z</Letter>
+        <ColorPicker/>
       </div>,
       destination
     );
