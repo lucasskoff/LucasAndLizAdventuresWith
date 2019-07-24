@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Letter from './Letter';
+import Letter from './component/Letter';
 import * as serviceWorker from './serviceWorker';
+import ColorPicker from './component/ColorPicker'
 
 var destination = document.querySelector("#container");
-   
-    ReactDOM.render(
-      <div>
+
+ReactDOM.render(
+    <div>
         <Letter bgcolor="#58B3FF">L</Letter>
         <Letter bgcolor="#FF605F">U</Letter>
         <Letter bgcolor="#FFD52E">C</Letter>
@@ -21,9 +22,10 @@ var destination = document.querySelector("#container");
         <Letter bgcolor="#58B3FF">L</Letter>
         <Letter bgcolor="#FF605F">I</Letter>
         <Letter bgcolor="#FFD52E">Z</Letter>
-      </div>,
-      destination
-    );
+        <ColorPicker />
+    </div>,
+    destination
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
