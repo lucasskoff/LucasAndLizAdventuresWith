@@ -23,7 +23,6 @@ ReactDOM.render(
         <Letter bgcolor="#58B3FF">L</Letter>
         <Letter bgcolor="#FF605F">I</Letter>
         <Letter bgcolor="#FFD52E">Z</Letter>
-        <ColorPicker />
         <App/>
 
     </div>,
