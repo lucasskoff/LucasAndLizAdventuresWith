@@ -4,6 +4,7 @@ import './index.css';
 import Letter from './component/Letter';
 import * as serviceWorker from './serviceWorker';
 import ColorPicker from './component/ColorPicker'
+import App from './component/App';
 
 var destination = document.querySelector("#container");
 
@@ -23,6 +24,8 @@ ReactDOM.render(
         <Letter bgcolor="#FF605F">I</Letter>
         <Letter bgcolor="#FFD52E">Z</Letter>
         <ColorPicker />
+        <App/>
+
     </div>,
     destination
 );
