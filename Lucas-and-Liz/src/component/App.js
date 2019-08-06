@@ -10,23 +10,50 @@ class App extends Component {
         super(props);
 
         this.state = {
-            albums: []
+            albums: [],
+            gallery: null
         };
+    }
+
+    formatUrl(farm, server, id, secret) {
+        return 'http://farm' + farm + '.staticflickr.com/' + 
+            server + '/' + id + '_' + secret + '.jpg'
+    }
+
+    parsePhoto(data) {
+        const photos = data.map((data) => {
+            const farm = data.farm;
+            const server = data.server;
+            const dataID = data.id;
+            const secret = data.secret;
+            const title = data.title;
+            return {
+                id: dataID,
+                title: title,
+                url: this.formatUrl(farm, server, dataID, secret),
+            };
+        });
+
+        return photos;
     }
 
     componentDidMount() {
         fetch(GET_PHOTOS)
             .then(response => response.json())
-            .then(data => this.setState({ albums: data.photoset.photo }));
+            .then(data => this.setState({ albums: this.parsePhoto(data.photoset.photo) }));
+        this.setState({
+            gallery: GET_PHOTOS
+        });
     }
 
     render() {
         const { albums } = this.state;
+
         return (
             <div>
                 {albums.map(album =>
-                    <div key={album.id}>
-                        {album.title}
+                    <div>
+                        <img src={album.url}></img>
                     </div>
                 )}
             </div>
