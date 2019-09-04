@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Letter from './Letter';
 import Gallery from './Gallery';
 class App extends Component {
-    render() {
+
+    createHeader() {
         return (
             <div>
                 <Letter bgcolor="#58B3FF">L</Letter>
@@ -18,6 +19,14 @@ class App extends Component {
                 <Letter bgcolor="#58B3FF">L</Letter>
                 <Letter bgcolor="#FF605F">I</Letter>
                 <Letter bgcolor="#FFD52E">Z</Letter>
+            </div>
+        )
+    }
+
+    render() {
+        return (
+            <div>
+                {this.createHeader()}
                 <Gallery />
 
             </div>
@@ -26,3 +35,4 @@ class App extends Component {
 }
 
 export default App;
+

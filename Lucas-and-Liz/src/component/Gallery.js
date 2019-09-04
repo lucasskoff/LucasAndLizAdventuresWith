@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 const API_KEY = '&api_key=5f356f10c4288fa658f9be659201e7cd';
 const JSON = '&format=json&nojsoncallback=1';
 const GET_PHOTOS = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos' + API_KEY + '&photoset_id=72157710017493861' + JSON;
-const GET_PHOTO = 'https://api.flickr.com/services/rest/?method=flickr.photos.getInfo' + API_KEY;
 
 class Gallery extends Component {
     constructor(props) {
