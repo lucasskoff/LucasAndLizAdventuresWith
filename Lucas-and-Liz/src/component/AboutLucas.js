@@ -4,7 +4,9 @@ class AboutLucas extends Component {
 
     render() {
         return (
-            <div className='text'>Lucas is cool!</div>
+            <div className='container'>
+                <div className='text'>Lucas is cool!</div>
+            </div>
         );
     }
 }

@@ -51,14 +51,11 @@ class Gallery extends Component {
             flex: 1,
             maxWidth: '100%'
         }
-        var pcStyle = {
-            flex: 1
-        }
         return (
             <div>
                 {albums.map(album =>
                     <div>
-                        <img src={album.url} style={isMobile ? {mobileStyle} : {pcStyle}}></img>
+                        <img src={album.url} style={mobileStyle}></img>
                     </div>
                 )}
             </div>
