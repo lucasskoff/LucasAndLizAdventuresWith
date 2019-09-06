@@ -51,9 +51,6 @@ class Gallery extends Component {
             flex: 1,
             maxWidth: '100%'
         }
-        var pcStyle = {
-            flex: 1
-        }
         return (
             <div>
                 {albums.map(album =>
