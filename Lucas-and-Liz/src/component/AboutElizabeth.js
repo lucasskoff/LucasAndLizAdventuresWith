@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import './TextStyle.css';
 
 class AboutElizabeth extends Component {
 
     render() {
 
         return (
-            <div>Elizabeth is cool!</div>
+            <div className='text'>Elizabeth is also cool!</div>
         );
     }
 }
