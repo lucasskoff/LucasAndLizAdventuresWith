@@ -1,64 +1,67 @@
 import React, { Component } from 'react';
-
-const API_KEY = '&api_key=5f356f10c4288fa658f9be659201e7cd';
-const JSON = '&format=json&nojsoncallback=1';
-const GET_PHOTOS = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos' + API_KEY + '&photoset_id=72157710017493861' + JSON;
-const GET_PHOTO = 'https://api.flickr.com/services/rest/?method=flickr.photos.getInfo' + API_KEY;
-
+import Letter from './Letter';
+import Gallery from './Gallery';
+import AboutLucas from './AboutLucas';
+import AboutElizabeth from './AboutElizabeth';
+import NavBar from './NavBar';
 class App extends Component {
+
     constructor(props) {
         super(props);
+        this.state = { page: "Gallery" }
+        this.changePage = this.changePage.bind(this);
+    }
 
-        this.state = {
-            albums: [],
-            gallery: null
+    createHeader() {
+        return (
+            <div>
+                <Letter bgcolor="#58B3FF">L</Letter>
+                <Letter bgcolor="#FF605F">U</Letter>
+                <Letter bgcolor="#FFD52E">C</Letter>
+                <Letter bgcolor="#49DD8E">A</Letter>
+                <Letter bgcolor="#AE99FF">S</Letter>
+                <Letter bgcolor="#333"> </Letter>
+                <Letter bgcolor="#FF605F">A</Letter>
+                <Letter bgcolor="#FFD52E">N</Letter>
+                <Letter bgcolor="#49DD8E">D</Letter>
+                <Letter bgcolor="#333"> </Letter>
+                <Letter bgcolor="#58B3FF">L</Letter>
+                <Letter bgcolor="#FF605F">I</Letter>
+                <Letter bgcolor="#FFD52E">Z</Letter>
+            </div>
+        )
+    }
+
+    changePage(newPage) {
+        if (newPage !== this.state.page) {
+            this.setState({
+                page: newPage
+            })
         };
     }
 
-    formatUrl(farm, server, id, secret) {
-        return 'http://farm' + farm + '.staticflickr.com/' + 
-            server + '/' + id + '_' + secret + '.jpg'
-    }
-
-    parsePhoto(data) {
-        const photos = data.map((data) => {
-            const farm = data.farm;
-            const server = data.server;
-            const dataID = data.id;
-            const secret = data.secret;
-            const title = data.title;
-            return {
-                id: dataID,
-                title: title,
-                url: this.formatUrl(farm, server, dataID, secret),
-            };
-        });
-
-        return photos;
-    }
-
-    componentDidMount() {
-        fetch(GET_PHOTOS)
-            .then(response => response.json())
-            .then(data => this.setState({ albums: this.parsePhoto(data.photoset.photo) }));
-        this.setState({
-            gallery: GET_PHOTOS
-        });
+    setPage(props) {
+        const page = props;
+        if(page === "Gallery"){
+            return <Gallery/>
+        } else if (page === "Lucas") {
+            return <AboutLucas/>
+        } else if (page === "Elizabeth") {
+            return <AboutElizabeth/>
+        }
     }
 
     render() {
-        const { albums } = this.state;
-
         return (
             <div>
-                {albums.map(album =>
-                    <div>
-                        <img src={album.url}></img>
-                    </div>
-                )}
+                {this.createHeader()}
+                <NavBar onClick={this.changePage} />
+                {this.setPage(this.state.page)}
+
             </div>
         );
     }
 }
 
 export default App;
+

@@ -1,30 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Letter from './component/Letter';
+
 import * as serviceWorker from './serviceWorker';
-import ColorPicker from './component/ColorPicker'
 import App from './component/App';
 
 var destination = document.querySelector("#container");
 
 ReactDOM.render(
     <div>
-        <Letter bgcolor="#58B3FF">L</Letter>
-        <Letter bgcolor="#FF605F">U</Letter>
-        <Letter bgcolor="#FFD52E">C</Letter>
-        <Letter bgcolor="#49DD8E">A</Letter>
-        <Letter bgcolor="#AE99FF">S</Letter>
-        <Letter bgcolor="white"> </Letter>
-        <Letter bgcolor="#FF605F">A</Letter>
-        <Letter bgcolor="#FFD52E">N</Letter>
-        <Letter bgcolor="#49DD8E">D</Letter>
-        <Letter bgcolor="white"> </Letter>
-        <Letter bgcolor="#58B3FF">L</Letter>
-        <Letter bgcolor="#FF605F">I</Letter>
-        <Letter bgcolor="#FFD52E">Z</Letter>
         <App/>
-
     </div>,
     destination
 );
