@@ -19,9 +19,9 @@ class NavBar extends Component {
         return (
             <div className='table'>
                 <ul className='topnav' onClick={this.handleClick}>
-                    <li><span id="Gallery" className={this.currentActive == "Gallery" ? "active" : "inactive"}>Gallery</span></li>
-                    <li><span id="Lucas" className={this.currentActive == "Lucas" ? "active" : "inactive"}>About Lucas</span></li>
-                    <li><span id="Elizabeth" className={this.currentActive == "Elizabeth" ? "active" : "inactive"}>About Elizabeth</span></li>
+                    <li><span id="Gallery" className={this.currentActive === "Gallery" ? "active" : "inactive"}>Gallery</span></li>
+                    <li><span id="Lucas" className={this.currentActive === "Lucas" ? "active" : "inactive"}>About Lucas</span></li>
+                    <li><span id="Elizabeth" className={this.currentActive === "Elizabeth" ? "active" : "inactive"}>About Elizabeth</span></li>
                 </ul>
             </div>
         );

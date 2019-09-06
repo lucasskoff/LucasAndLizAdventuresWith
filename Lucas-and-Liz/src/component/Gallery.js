@@ -58,7 +58,7 @@ class Gallery extends Component {
             <div>
                 {albums.map(album =>
                     <div>
-                        <img src={album.url} style={isMobile ? {mobileStyle} : {pcStyle}}></img>
+                        <img src={album.url} style={mobileStyle}></img>
                     </div>
                 )}
             </div>
