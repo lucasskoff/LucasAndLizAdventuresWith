@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {isMobile} from 'react-device-detect';
 const API_KEY = '&api_key=5f356f10c4288fa658f9be659201e7cd';
 const JSON = '&format=json&nojsoncallback=1';
 const GET_PHOTOS = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos' + API_KEY + '&photoset_id=72157710017493861' + JSON;
@@ -47,12 +47,18 @@ class Gallery extends Component {
 
     render() {
         const { albums } = this.state;
-
+        var mobileStyle = {
+            flex: 1,
+            maxWidth: '100%'
+        }
+        var pcStyle = {
+            flex: 1
+        }
         return (
             <div>
                 {albums.map(album =>
                     <div>
-                        <img src={album.url}></img>
+                        <img src={album.url} style={isMobile ? {mobileStyle} : {pcStyle}}></img>
                     </div>
                 )}
             </div>

@@ -6,6 +6,7 @@
 .topnav {
   background-color: #333;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .topnav ul {
@@ -36,6 +37,11 @@
 }
 
 .topnav span.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topNav .active {
   background-color: #4CAF50;
   color: white;
 }
