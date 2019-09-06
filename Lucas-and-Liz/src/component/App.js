@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {isMobile} from 'react-device-detect';
 import Letter from './Letter';
 import Gallery from './Gallery';
 import AboutLucas from './AboutLucas';
@@ -20,11 +21,11 @@ class App extends Component {
                 <Letter bgcolor="#FFD52E">C</Letter>
                 <Letter bgcolor="#49DD8E">A</Letter>
                 <Letter bgcolor="#AE99FF">S</Letter>
-                <Letter bgcolor="#333"> </Letter>
+                {isMobile ? <br/> : <Letter bgcolor="#333"> </Letter>}
                 <Letter bgcolor="#FF605F">A</Letter>
                 <Letter bgcolor="#FFD52E">N</Letter>
                 <Letter bgcolor="#49DD8E">D</Letter>
-                <Letter bgcolor="#333"> </Letter>
+                {isMobile ? <br/> : <Letter bgcolor="#333"> </Letter>}
                 <Letter bgcolor="#58B3FF">L</Letter>
                 <Letter bgcolor="#FF605F">I</Letter>
                 <Letter bgcolor="#FFD52E">Z</Letter>
