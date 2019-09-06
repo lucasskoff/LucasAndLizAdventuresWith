@@ -29,7 +29,6 @@ class App extends Component {
                 <Letter bgcolor="#58B3FF">L</Letter>
                 <Letter bgcolor="#FF605F">I</Letter>
                 <Letter bgcolor="#FFD52E">Z</Letter>
-                {isMobile ? <div>THIS IS MOBILE</div> : <div>THIS IS NOT MOBILE</div>}
             </div>
         )
     }
