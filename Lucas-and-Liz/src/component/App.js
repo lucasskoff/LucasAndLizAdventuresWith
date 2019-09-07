@@ -8,7 +8,6 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-        const pages = ["Gallery", "About Lucas", "About Elizabeth"];
         this.state = { page: "Gallery", width: 841, height:  1367 };
         this.changePage = this.changePage.bind(this);
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
@@ -30,7 +29,7 @@ class App extends Component {
                 <Letter bgcolor="#FF605F">A</Letter>
                 <Letter bgcolor="#FFD52E">N</Letter>
                 <Letter bgcolor="#49DD8E">D</Letter>
-                {isMobile ? <br /> : <Letter bgcolor="#333"> </Letter>}
+                <Letter bgcolor="#333"> </Letter>
                 <Letter bgcolor="#58B3FF">L</Letter>
                 <Letter bgcolor="#FF605F">I</Letter>
                 <Letter bgcolor="#FFD52E">Z</Letter>
