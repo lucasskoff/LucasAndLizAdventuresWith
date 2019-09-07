@@ -22,7 +22,8 @@ class NavBar extends Component {
             display: 'inline-block'
         };
         var liStyleMobile = {
-            display: 'inline-block'
+            display: 'inline-block',
+            width: '100px',
         };
         return (
             <div className='table'>
