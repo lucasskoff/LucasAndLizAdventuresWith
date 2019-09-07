@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './TextStyle.css';
+import './stylesheet/TextStyle.css';
 
 class AboutElizabeth extends Component {
 
