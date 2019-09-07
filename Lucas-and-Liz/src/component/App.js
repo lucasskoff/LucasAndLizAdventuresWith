@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { isMobile } from 'mobile-device-detect';
 import Letter from './Letter';
+import Home from './Home';
 import Gallery from './Gallery';
 import About from './About';
 import NavBar from './NavBar';
@@ -8,7 +9,7 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { page: "Gallery", width: 841, height:  1367 };
+        this.state = { page: "Home", width: 841, height: 1367 };
         this.changePage = this.changePage.bind(this);
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
@@ -49,10 +50,12 @@ class App extends Component {
         const page = props;
         if (page === "Gallery") {
             return <Gallery />
+        } else if (page === "Home") {
+            return <Home width={this.state.width} height={this.state.height} name="Welcome" />
         } else if (page === "Lucas") {
-            return <About screenWidth={this.state.width} screenHeight={this.state.height} name="Lucas"/>
+            return <About width={this.state.width} height={this.state.height} name="Lucas" />
         } else if (page === "Elizabeth") {
-            return <About  screenWidth={this.state.width} screenHeight={this.state.height} name="Elizabeth"/>
+            return <About width={this.state.width} height={this.state.height} name="Elizabeth" />
         }
     }
 

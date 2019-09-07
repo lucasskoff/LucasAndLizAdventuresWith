@@ -5,7 +5,7 @@ import '../stylesheet/NavBar.css';
 class NavBar extends Component {
     constructor(props) {
         super(props);
-        this.currentActive = "Gallery";
+        this.currentActive = "Home";
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -27,9 +27,10 @@ class NavBar extends Component {
         return (
             <div className='table'>
                 <ul className='topnav' onClick={this.handleClick}>
+                    <li style={isMobile ? liStyleMobile : liStylePC}><span id="Home" className={this.currentActive === "Home" ? "active" : "inactive"}>Home</span></li>
                     <li style={isMobile ? liStyleMobile : liStylePC}><span id="Gallery" className={this.currentActive === "Gallery" ? "active" : "inactive"}>Gallery</span></li>
-                    <li style={isMobile ? liStyleMobile : liStylePC}><span id="Lucas" className={this.currentActive === "Lucas" ? "active" : "inactive"}>Lucas</span></li>
-                    <li style={isMobile ? liStyleMobile : liStylePC}><span id="Elizabeth" className={this.currentActive === "Elizabeth" ? "active" : "inactive"}>Elizabeth</span></li>
+                    <li style={isMobile ? liStyleMobile : liStylePC}><span id="Lucas" className={this.currentActive === "Lucas" ? "active" : "inactive"}>{isMobile ? 'Lucas' : 'About Lucas'}</span></li>
+                    <li style={isMobile ? liStyleMobile : liStylePC}><span id="Elizabeth" className={this.currentActive === "Elizabeth" ? "active" : "inactive"}>{isMobile ? 'Elizabeth' : 'About Elizabeth'}</span></li>
                 </ul>
             </div>
         );

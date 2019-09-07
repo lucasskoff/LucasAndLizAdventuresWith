@@ -5,11 +5,15 @@ class AboutElizabeth extends Component {
 
     render() {
         var screenSize = {
-            width: 841,
-            height: 1367,
+            width: this.props.width,
+            height: this.props.height,
         }
         return (
             <div style={this.screenSize}>
+                {this.props.name === "Welcome" ?
+                    <div className='text' style={screenSize}>Welcome to our page. :)</div> :
+                    <div className='text' style={screenSize}>{this.props.name} is also cool!</div>
+                }
                 <div className='text' style={screenSize}>{this.props.name} is also cool!</div>
             </div>
         );
