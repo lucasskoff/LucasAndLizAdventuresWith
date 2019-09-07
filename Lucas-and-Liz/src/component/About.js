@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../stylesheet/TextStyle.css';
 
-class AboutElizabeth extends Component {
+class About extends Component {
 
     render() {
         var screenSize = {
@@ -14,10 +14,9 @@ class AboutElizabeth extends Component {
                     <div className='text' style={screenSize}>Welcome to our page. :)</div> :
                     <div className='text' style={screenSize}>{this.props.name} is also cool!</div>
                 }
-                <div className='text' style={screenSize}>{this.props.name} is also cool!</div>
             </div>
         );
     }
 }
 
-export default AboutElizabeth;
+export default About;

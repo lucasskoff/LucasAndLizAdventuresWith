@@ -9,7 +9,7 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { page: "Home", width: 841, height: 1367 };
+        this.state = { page: "Home", width: "100%", height: 1170 };
         this.changePage = this.changePage.bind(this);
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
@@ -19,22 +19,23 @@ class App extends Component {
     }
 
     createHeader() {
+        const letters = ["L", "U", "C", "A", "S", "", "A", "N", "D", "", "L", "I", "Z"];
+        const lettersDisplay = letters.map((letter, index) => {
+            var cssHSL = "hsl(" + 500 * Math.random() + ',' +
+                (100 * Math.random()) + '%,' +
+                (60 + 10 * Math.random()) + '%)';
+            if (letter === "") {
+                if (isMobile) {
+                    return <br/>
+                } else {
+                    return <span><Letter key={index} bgcolor="#333">{letter}</Letter></span>
+                }
+            } else {
+                return <span><Letter key={index} bgcolor={cssHSL}>{letter}</Letter></span>
+            }
+        });
         return (
-            <div>
-                <Letter bgcolor="#58B3FF">L</Letter>
-                <Letter bgcolor="#FF605F">U</Letter>
-                <Letter bgcolor="#FFD52E">C</Letter>
-                <Letter bgcolor="#49DD8E">A</Letter>
-                <Letter bgcolor="#AE99FF">S</Letter>
-                {isMobile ? <br /> : <Letter bgcolor="#333"> </Letter>}
-                <Letter bgcolor="#FF605F">A</Letter>
-                <Letter bgcolor="#FFD52E">N</Letter>
-                <Letter bgcolor="#49DD8E">D</Letter>
-                <Letter bgcolor="#333"> </Letter>
-                <Letter bgcolor="#58B3FF">L</Letter>
-                <Letter bgcolor="#FF605F">I</Letter>
-                <Letter bgcolor="#FFD52E">Z</Letter>
-            </div>
+            <div>{lettersDisplay}</div>
         )
     }
 
@@ -51,7 +52,7 @@ class App extends Component {
         if (page === "Gallery") {
             return <Gallery />
         } else if (page === "Home") {
-            return <Home width={this.state.width} height={this.state.height} name="Welcome" />
+            return <About width={this.state.width} height={this.state.height} name="Welcome" />
         } else if (page === "Lucas") {
             return <About width={this.state.width} height={this.state.height} name="Lucas" />
         } else if (page === "Elizabeth") {
