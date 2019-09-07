@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { isMobile } from 'mobile-device-detect';
 import Letter from './Letter';
-import Home from './Home';
 import Gallery from './Gallery';
 import About from './About';
 import NavBar from './NavBar';
