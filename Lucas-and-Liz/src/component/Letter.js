@@ -14,13 +14,13 @@ class Letter extends React.Component {
       textAlign: "center"
     }
     var mobileLetterStyle = {
-      padding: 10,
-      margin: 10,
+      padding: 5,
+      margin: 5,
       backgroundColor: this.props.bgcolor,
       color: "#333",
       display: "inline-block",
       fontFamily: "monospace",
-      fontSize: 26,
+      fontSize: 35,
       textAlign: "center"
     }
     return (
