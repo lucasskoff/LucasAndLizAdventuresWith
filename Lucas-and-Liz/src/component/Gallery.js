@@ -46,15 +46,22 @@ class Gallery extends Component {
 
     render() {
         const { albums } = this.state;
-        var mobileStyle = {
+        var imageStyle = {
             flex: 1,
-            maxWidth: '100%'
+            maxWidth: '100%',
+            maxHeight: '100%'
+        }
+        var grid = {
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridTemplateRows: 'repeat(2, 5vw)',
+            gridGap: '15px',
         }
         return (
-            <div>
+            <div style={grid}>
                 {albums.map(album =>
                     <div key={album.url}>
-                        <img src={album.url} style={mobileStyle} alt={album.url.toString()}></img>
+                        <img src={album.url} style={imageStyle} alt={album.url.toString()}></img>
                     </div>
                 )}
             </div>
