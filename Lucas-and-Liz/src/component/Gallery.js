@@ -48,13 +48,13 @@ class Gallery extends Component {
         const { albums } = this.state;
         var imageStyle = {
             flex: 1,
-            maxWidth: '100%',
-            maxHeight: '100%'
+            maxWidth: "auto",
+            height: "auto"
         }
         var grid = {
             display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            gridTemplateRows: 'repeat(2, 5vw)',
+            gridTemplateColumns: 'repeat(2, 2fr)',
+            gridTemplateRows: 'repeat(2, 50vw)',
             gridGap: '15px',
         }
         return (
