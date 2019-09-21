@@ -47,15 +47,11 @@ class Gallery extends Component {
     render() {
         const { albums } = this.state;
         var imageStyle = {
-            flex: 1,
             maxWidth: "100%",
-            height: "auto"
         }
         var grid = {
-            flex: 1,
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
-            gridTemplateRows: 'auto',
             gridGap: '15px'
         }
         return (
