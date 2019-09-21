@@ -46,16 +46,23 @@ class Gallery extends Component {
 
     render() {
         const { albums } = this.state;
+        var imageStyle = {
+            flex: 1,
+            maxWidth: "100%",
+            height: "auto"
+        }
         var grid = {
+            flex: 1,
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(500px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
+            gridTemplateRows: 'auto',
             gridGap: '15px'
         }
         return (
             <div style={grid}>
                 {albums.map(album =>
                     <div key={album.url}>
-                        <img src={album.url} alt={album.url.toString()}></img>
+                        <img src={album.url} style={imageStyle} alt={album.url.toString()}></img>
                     </div>
                 )}
             </div>
