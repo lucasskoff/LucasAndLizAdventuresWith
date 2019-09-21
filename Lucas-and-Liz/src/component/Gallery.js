@@ -48,7 +48,7 @@ class Gallery extends Component {
         const { albums } = this.state;
         var grid = {
             display: 'grid',
-            gridTemplateColumns: 'repeat(2, 2fr)',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(500px, 1fr))',
             gridGap: '15px'
         }
         return (
