@@ -51,7 +51,7 @@ class Gallery extends Component {
         }
         var grid = {
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
             gridGap: '15px'
         }
         return (
