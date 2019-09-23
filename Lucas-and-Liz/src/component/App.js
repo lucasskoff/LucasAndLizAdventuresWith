@@ -4,6 +4,7 @@ import Letter from './Letter';
 import Gallery from './Gallery';
 import About from './About';
 import NavBar from './NavBar';
+import logo from '../assets/LucasAndLizLogo.png'
 class App extends Component {
 
     constructor(props) {
@@ -34,8 +35,9 @@ class App extends Component {
             }
         });
         return (
-            <div>{lettersDisplay}</div>
-        )
+            <div><img src={logo} alt="Logo"/>
+            </div>
+        );
     }
 
     generateColor() {
