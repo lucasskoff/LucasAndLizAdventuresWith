@@ -35,8 +35,7 @@ class App extends Component {
             }
         });
         return (
-            <div>{lettersDisplay}
-            </div>
+            <div>{lettersDisplay}</div>
         );
     }
 
