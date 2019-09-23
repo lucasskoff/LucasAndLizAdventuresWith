@@ -4,6 +4,7 @@ import Letter from './Letter';
 import Gallery from './Gallery';
 import About from './About';
 import NavBar from './NavBar';
+import logo from '../assets/LucasAndLizLogo.png'
 class App extends Component {
 
     constructor(props) {
@@ -18,7 +19,7 @@ class App extends Component {
     }
 
     createHeader() {
-        const letters = ["L", "U", "C", "A", "S", "", "A", "N", "D", "", "L", "I", "Z"];
+        const letters = ["A", "D", "V", "E", "N", "T", "U", "R", "E", "S", "", "W", "I", "T", "H"];
         const lettersDisplay = letters.map((letter, index) => {
             var picker = Math.floor(Math.random() * 3) + 1;
             var cssHSL = "rgb(" + this.generateColor() + ","
@@ -35,7 +36,7 @@ class App extends Component {
         });
         return (
             <div>{lettersDisplay}</div>
-        )
+        );
     }
 
     generateColor() {
@@ -64,8 +65,12 @@ class App extends Component {
     }
 
     render() {
+        var imageStyle = {
+            maxWidth: "100%"
+        }
         return (
             <div>
+                <img style={imageStyle} src={logo} alt="Logo"/>
                 {this.createHeader()}
                 <NavBar onClick={this.changePage} />
                 {this.setPage(this.state.page)}
