@@ -19,7 +19,7 @@ class App extends Component {
     }
 
     createHeader() {
-        const letters = ["L", "U", "C", "A", "S", "", "A", "N", "D", "", "L", "I", "Z"];
+        const letters = ["A", "D", "V", "E", "N", "T", "U", "R", "E", "S", "", "W", "I", "T", "H"];
         const lettersDisplay = letters.map((letter, index) => {
             var picker = Math.floor(Math.random() * 3) + 1;
             var cssHSL = "rgb(" + this.generateColor() + ","
@@ -35,7 +35,7 @@ class App extends Component {
             }
         });
         return (
-            <div><img src={logo} alt="Logo"/>
+            <div>{lettersDisplay}
             </div>
         );
     }
@@ -68,6 +68,7 @@ class App extends Component {
     render() {
         return (
             <div>
+                <img src={logo} alt="Logo"/>
                 {this.createHeader()}
                 <NavBar onClick={this.changePage} />
                 {this.setPage(this.state.page)}
