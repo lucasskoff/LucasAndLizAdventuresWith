@@ -47,7 +47,7 @@ class Gallery extends Component {
     render() {
         const { albums } = this.state;
         var imageStyle = {
-            maxWidth: "100%",
+            maxWidth: "100%"
         }
         var grid = {
             display: 'grid',

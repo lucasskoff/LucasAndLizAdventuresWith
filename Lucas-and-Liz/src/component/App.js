@@ -66,9 +66,12 @@ class App extends Component {
     }
 
     render() {
+        var imageStyle = {
+            maxWidth: "100%"
+        }
         return (
             <div>
-                <img src={logo} alt="Logo"/>
+                <img style={imageStyle} src={logo} alt="Logo"/>
                 {this.createHeader()}
                 <NavBar onClick={this.changePage} />
                 {this.setPage(this.state.page)}
