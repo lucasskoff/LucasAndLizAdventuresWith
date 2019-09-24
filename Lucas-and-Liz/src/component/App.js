@@ -21,7 +21,6 @@ class App extends Component {
     createHeader() {
         const letters = ["A", "D", "V", "E", "N", "T", "U", "R", "E", "S", "", "W", "I", "T", "H"];
         const lettersDisplay = letters.map((letter, index) => {
-            var picker = Math.floor(Math.random() * 3) + 1;
             var cssHSL = "rgb(" + this.generateColor() + ","
                 + this.generateColor() + "," + this.generateColor() + ")";
             if (letter === "") {
