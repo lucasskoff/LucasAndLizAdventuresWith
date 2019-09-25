@@ -4,13 +4,13 @@ import {isMobile} from 'mobile-device-detect';
 class Letter extends React.Component {
   render() {
     var letterStyle = {
-      padding: 10,
-      margin: 10,
+      padding: '1vw',
+      margin: '1vw',
       backgroundColor: this.props.bgcolor,
       color: "#333",
       display: "inline-block",
       fontFamily: "monospace",
-      fontSize: 32,
+      fontSize: '3vw',
       textAlign: "center"
     }
     var mobileLetterStyle = {
@@ -20,7 +20,7 @@ class Letter extends React.Component {
       color: "#333",
       display: "inline-block",
       fontFamily: "monospace",
-      fontSize: 35,
+      fontSize: '20vw',
       textAlign: "center"
     }
     return (
