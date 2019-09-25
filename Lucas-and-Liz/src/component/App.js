@@ -22,15 +22,8 @@ class App extends Component {
         const lettersDisplay = letters.map((letter, index) => {
             var cssHSL = "rgb(" + this.generateColor() + ","
                 + this.generateColor() + "," + this.generateColor() + ")";
-            if (letter === "") {
-                if (isMobile) {
-                    return <br />
-                } else {
-                    return <span><Letter key={index} bgcolor={this.state.bgColor}>{letter}</Letter></span>
-                }
-            } else {
-                return <span><Letter key={index} bgcolor={cssHSL}>{letter}</Letter></span>
-            }
+
+            return <span><Letter key={index} bgcolor={cssHSL}>{letter}</Letter></span>
         });
 
         return (
@@ -71,7 +64,7 @@ class App extends Component {
         const secondWord = ["W", "I", "T", "H"];
         return (
             <div>
-                <img style={imageStyle} src={logo} alt="Logo"/>
+                <img style={imageStyle} src={logo} alt="Logo" />
                 {this.createHeader(firstWord)}
                 {this.createHeader(secondWord)}
                 <NavBar onClick={this.changePage} />
