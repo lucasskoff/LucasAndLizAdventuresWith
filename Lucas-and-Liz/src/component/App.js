@@ -18,8 +18,7 @@ class App extends Component {
         this.setState({ width: window.innerWidth, height: window.innerHeight });
     }
 
-    createHeader() {
-        const letters = ["A", "D", "V", "E", "N", "T", "U", "R", "E", "S", "", "W", "I", "T", "H"];
+    createHeader(letters) {
         const lettersDisplay = letters.map((letter, index) => {
             var cssHSL = "rgb(" + this.generateColor() + ","
                 + this.generateColor() + "," + this.generateColor() + ")";
@@ -33,6 +32,7 @@ class App extends Component {
                 return <span><Letter key={index} bgcolor={cssHSL}>{letter}</Letter></span>
             }
         });
+
         return (
             <div>{lettersDisplay}</div>
         );
@@ -67,10 +67,13 @@ class App extends Component {
         var imageStyle = {
             maxWidth: "100%"
         }
+        const firstWord = ["A", "D", "V", "E", "N", "T", "U", "R", "E", "S"];
+        const secondWord = ["W", "I", "T", "H"];
         return (
             <div>
                 <img style={imageStyle} src={logo} alt="Logo"/>
-                {this.createHeader()}
+                {this.createHeader(firstWord)}
+                {this.createHeader(secondWord)}
                 <NavBar onClick={this.changePage} />
                 {this.setPage(this.state.page)}
 
