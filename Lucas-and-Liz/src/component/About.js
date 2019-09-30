@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../stylesheet/TextStyle.css';
+import Gallery from './Gallery';
 
 class About extends Component {
 
@@ -12,7 +13,7 @@ class About extends Component {
             <div style={this.screenSize}>
                 {this.props.name === "Welcome" ?
                     <div className='text' style={screenSize}>Welcome to our page. :)</div> :
-                    <div className='text' style={screenSize}>{this.props.name} is also cool!</div>
+                    <Gallery/>
                 }
             </div>
         );
