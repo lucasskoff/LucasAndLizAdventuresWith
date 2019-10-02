@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { isMobile } from 'mobile-device-detect';
 import Letter from './Letter';
 import Gallery from './Gallery';
 import About from './About';
@@ -46,13 +45,13 @@ class App extends Component {
     setPage(props) {
         const page = props;
         if (page === "Gallery") {
-            return <Gallery />
+            return <Gallery galleryId="72157710017493861"/>
         } else if (page === "Home") {
             return <About width={this.state.width} height={this.state.height} name="Welcome" />
         } else if (page === "Lucas") {
-            return <About width={this.state.width} height={this.state.height} name="Lucas" />
+            return <Gallery galleryId="72157711165736866"/>
         } else if (page === "Elizabeth") {
-            return <About width={this.state.width} height={this.state.height} name="Elizabeth" />
+            return <Gallery galleryId="72157711169399278"/>
         }
     }
 

@@ -13,7 +13,7 @@ class About extends Component {
             <div style={this.screenSize}>
                 {this.props.name === "Welcome" ?
                     <div className='text' style={screenSize}>Welcome to our page. :)</div> :
-                    <Gallery/>
+                    <Gallery galleryId={this.props.galleryId}/>
                 }
             </div>
         );
