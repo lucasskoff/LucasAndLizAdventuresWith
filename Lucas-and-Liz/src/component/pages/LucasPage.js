@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../stylesheet/TextStyle.css';
-import Gallery from './Gallery';
+import '../../stylesheet/TextStyle.css';
+import Gallery from '../PhotoGrid';
 
-class About extends Component {
+class LucasPage extends Component {
 
     render() {
         var screenSize = {
@@ -11,13 +11,10 @@ class About extends Component {
         }
         return (
             <div style={this.screenSize}>
-                {this.props.name === "Welcome" ?
-                    <div className='text' style={screenSize}>Welcome to our page. :)</div> :
                     <Gallery galleryId={this.props.galleryId}/>
-                }
             </div>
         );
     }
 }
 
-export default About;
+export default LucasPage;

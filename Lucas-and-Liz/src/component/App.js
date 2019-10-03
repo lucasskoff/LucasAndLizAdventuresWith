@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Letter from './Letter';
-import Gallery from './Gallery';
-import About from './About';
 import NavBar from './NavBar';
 import logo from '../assets/LucasAndLizLogo.png'
+import GalleryPage from './pages/GalleryPage'
+import LucasPage from './pages/LucasPage'
+import WelcomePage from './pages/WelcomePage'
+import ElizabethPage from './pages/ElizabethPage'
 class App extends Component {
 
     constructor(props) {
@@ -45,13 +47,13 @@ class App extends Component {
     setPage(props) {
         const page = props;
         if (page === "Gallery") {
-            return <Gallery galleryId="72157710017493861"/>
+            return <GalleryPage galleryId="72157710017493861"/>
         } else if (page === "Home") {
-            return <About width={this.state.width} height={this.state.height} name="Welcome" />
+            return <WelcomePage width={this.state.width} height={this.state.height} name="Welcome" />
         } else if (page === "Lucas") {
-            return <Gallery galleryId="72157711165736866"/>
+            return <LucasPage galleryId="72157711165736866"/>
         } else if (page === "Elizabeth") {
-            return <Gallery galleryId="72157711169399278"/>
+            return <ElizabethPage galleryId="72157711169399278"/>
         }
     }
 
