@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 const API_KEY = '&api_key=5f356f10c4288fa658f9be659201e7cd';
 const JSON = '&format=json&nojsoncallback=1';
-const GET_PHOTOS = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos' + API_KEY + '&photoset_id=72157710017493861' + JSON;
+const GET_PHOTOS = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos' + API_KEY;
 
 class Gallery extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ class Gallery extends Component {
     }
 
     formatUrl(farm, server, id, secret) {
-        return 'http://farm' + farm + '.staticflickr.com/' + 
+        return 'http://farm' + farm + '.staticflickr.com/' +
             server + '/' + id + '_' + secret + '.jpg'
     }
 
@@ -36,11 +36,12 @@ class Gallery extends Component {
     }
 
     componentDidMount() {
-        fetch(GET_PHOTOS)
+        var albumUrl = GET_PHOTOS + '&photoset_id=' + this.props.galleryId + JSON;
+        fetch(albumUrl)
             .then(response => response.json())
             .then(data => this.setState({ albums: this.parsePhoto(data.photoset.photo) }));
         this.setState({
-            gallery: GET_PHOTOS
+            gallery: albumUrl
         });
     }
 
