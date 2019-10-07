@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Lightbox from 'react-lightbox-component';
 const API_KEY = '&api_key=5f356f10c4288fa658f9be659201e7cd';
 const JSON = '&format=json&nojsoncallback=1';
 const GET_PHOTOS = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos' + API_KEY;
@@ -59,7 +60,15 @@ class Gallery extends Component {
             <div style={grid}>
                 {albums.map(album =>
                     <div key={album.url}>
-                        <img src={album.url} style={imageStyle} alt={album.url.toString()}></img>
+                        <Lightbox style={imageStyle} images={
+                            [
+                                {
+                                    src: album.url,
+                                    title: album.url,
+                                    description: 'image description'
+                                }
+                            ]
+                        } />
                     </div>
                 )}
             </div>
