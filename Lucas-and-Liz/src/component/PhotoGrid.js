@@ -27,9 +27,9 @@ class Gallery extends Component {
             const secret = data.secret;
             const title = data.title;
             return {
-                id: dataID,
+                description: dataID,
                 title: title,
-                url: this.formatUrl(farm, server, dataID, secret),
+                src: this.formatUrl(farm, server, dataID, secret),
             };
         });
 
@@ -57,21 +57,9 @@ class Gallery extends Component {
             gridGap: '15px'
         }
         return (
-            <div style={grid}>
-                {albums.map(album =>
-                    <div key={album.url}>
-                        <Lightbox style={imageStyle} images={
-                            [
-                                {
-                                    src: album.url,
-                                    title: album.url,
-                                    description: 'image description'
-                                }
-                            ]
-                        } />
-                    </div>
-                )}
-            </div>
+                <Lightbox
+                    images={albums}
+                    showImageModifiers={false}/>
         );
     }
 }
