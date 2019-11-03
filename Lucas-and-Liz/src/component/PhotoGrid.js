@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+
+import LightboxContainer from './lightbox/LightboxContainer';
+//import PhotoContainer from '../PhotoContainer/PhotoContainer.jsx';
+
 const API_KEY = '&api_key=5f356f10c4288fa658f9be659201e7cd';
 const JSON = '&format=json&nojsoncallback=1';
 const GET_PHOTOS = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos' + API_KEY;
