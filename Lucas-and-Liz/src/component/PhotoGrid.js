@@ -13,6 +13,7 @@ class Gallery extends Component {
 
         this.state = {
             albums: [],
+            selectedPhoto: null,
             gallery: null
         };
     }
@@ -49,23 +50,35 @@ class Gallery extends Component {
         });
     }
 
+    onSelectPhoto(photoId) {
+        return () => {
+            this.setState({
+                selectedPhoto: photoId
+            });
+        };
+    }
+
+    getSelectedPhotoData() {
+        const { albums, selectedPhoto } = this.state;
+
+        if (selectedPhoto) {
+            return albums.filter((photo) => photo.id === selectedPhoto)[0];
+        }
+
+        return null;
+    }
+
     render() {
         const { albums } = this.state;
-        var imageStyle = {
-            maxWidth: "100%"
-        }
-        var grid = {
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
-            gridGap: '15px'
-        }
+
+        const selectedPhotoData = this.getSelectedPhotoData();
         return (
-            <div style={grid}>
-                {albums.map(album =>
-                    <div key={album.url}>
-                        <img src={album.url} style={imageStyle} alt={album.url.toString()}></img>
-                    </div>
-                )}
+            <div>
+                {selectedPhotoData ?
+                    <LightboxContainer
+                        onClose={this.onSelectPhoto(null).bind(this)}
+                        photo={selectedPhotoData} /> :
+                    null}
             </div>
         );
     }
