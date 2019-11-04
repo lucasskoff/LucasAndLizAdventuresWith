@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+
+import LightboxContainer from './lightbox/LightboxContainer';
+import PhotoContainer from './photo/PhotoContainer';
+
 const API_KEY = '&api_key=5f356f10c4288fa658f9be659201e7cd';
 const JSON = '&format=json&nojsoncallback=1';
 const GET_PHOTOS = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos' + API_KEY;
@@ -9,6 +13,7 @@ class Gallery extends Component {
 
         this.state = {
             albums: [],
+            selectedPhoto: null,
             gallery: null
         };
     }
@@ -45,23 +50,44 @@ class Gallery extends Component {
         });
     }
 
+    onSelectPhoto(photoId) {
+        return () => {
+            this.setState({
+                selectedPhoto: photoId
+            });
+        };
+    }
+
+    getSelectedPhotoData() {
+        const { albums, selectedPhoto } = this.state;
+
+        if (selectedPhoto) {
+            return albums.filter((photo) => photo.id === selectedPhoto)[0];
+        }
+
+        return null;
+    }
+
     render() {
+        const {scrollPosition} = this.props;
         const { albums } = this.state;
-        var imageStyle = {
-            maxWidth: "100%"
-        }
-        var grid = {
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
-            gridGap: '15px'
-        }
+
+        const selectedPhotoData = this.getSelectedPhotoData();
+        
         return (
-            <div style={grid}>
-                {albums.map(album =>
-                    <div key={album.url}>
-                        <img src={album.url} style={imageStyle} alt={album.url.toString()}></img>
-                    </div>
+            <div>
+                {albums.map((photo) =>
+                    <PhotoContainer
+                        key={photo.id}
+                        onSelect={this.onSelectPhoto(photo.id).bind(this)}
+                        photo={photo}
+                        scrollPosition={scrollPosition} />
                 )}
+                {selectedPhotoData ?
+                    <LightboxContainer
+                        onClose={this.onSelectPhoto(null).bind(this)}
+                        photo={selectedPhotoData} /> :
+                    null}
             </div>
         );
     }
