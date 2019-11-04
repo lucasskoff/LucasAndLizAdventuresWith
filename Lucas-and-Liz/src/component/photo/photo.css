@@ -30,7 +30,7 @@
   
   .photo-credits {
     bottom: calc(-2.5rem - 25px);
-    color: #e9504e;
+    color: black;
     font-weight: bold;
     max-height: 2.5rem;
     max-width: calc(100% - 25px);
