@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import LightboxContainer from './lightbox/LightboxContainer';
-//import PhotoContainer from '../PhotoContainer/PhotoContainer.jsx';
+import PhotoContainer from './photo/PhotoContainer';
 
 const API_KEY = '&api_key=5f356f10c4288fa658f9be659201e7cd';
 const JSON = '&format=json&nojsoncallback=1';
@@ -69,11 +69,20 @@ class Gallery extends Component {
     }
 
     render() {
+        const {scrollPosition} = this.props;
         const { albums } = this.state;
 
         const selectedPhotoData = this.getSelectedPhotoData();
+        
         return (
             <div>
+                {albums.map((photo) =>
+                    <PhotoContainer
+                        key={photo.id}
+                        onSelect={this.onSelectPhoto(photo.id).bind(this)}
+                        photo={photo}
+                        scrollPosition={scrollPosition} />
+                )}
                 {selectedPhotoData ?
                     <LightboxContainer
                         onClose={this.onSelectPhoto(null).bind(this)}
