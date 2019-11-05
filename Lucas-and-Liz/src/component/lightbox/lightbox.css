@@ -29,16 +29,6 @@
     white-space: nowrap;
   }
   
-  .lightbox-owner {
-    color: black;
-  }
-  
-  .lightbox-owner:hover,
-  .lightbox-owner:focus,
-  .lightbox-owner:active {
-    opacity: .8;
-  }
-  
   .lightbox-img {
     cursor: zoom-out;
     left: 50%;

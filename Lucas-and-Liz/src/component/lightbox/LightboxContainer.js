@@ -85,8 +85,6 @@ export default class LightboxContainer extends React.Component {
     const photoInfo = {
       date: this.getNodeAttribute(infoNodes, 'dates', 1),
       description: this.getNodeText(infoNodes, 'description'),
-      owner: this.getNodeAttribute(infoNodes, 'owner', 1),
-      ownerName: this.getNodeAttribute(infoNodes, 'owner', 2),
       link: this.getNodeText(infoNodes, 'urls')
     };
 
