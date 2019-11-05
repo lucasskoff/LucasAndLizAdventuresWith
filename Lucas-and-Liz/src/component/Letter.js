@@ -1,5 +1,4 @@
 import React from 'react';
-import {isMobile} from 'mobile-device-detect';
 
 class Letter extends React.Component {
   render() {
