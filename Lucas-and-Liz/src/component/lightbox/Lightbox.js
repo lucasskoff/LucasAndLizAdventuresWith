@@ -17,8 +17,7 @@ export default class Lightbox extends React.Component {
 
   render() {
     const {onClose} = this.props;
-    const {date, description, link, owner,
-      ownerName, title, url} = this.props.photo;
+    const {date, description, link, title, url} = this.props.photo;
 
     return (
       <div className="lightbox" onClick={onClose}>
@@ -29,19 +28,6 @@ export default class Lightbox extends React.Component {
           <div className="lightbox-description">
             {description}
           </div>
-          {link && owner ? (
-            <a
-              className="lightbox-owner"
-              href={link}>
-              {owner}
-              {ownerName ? (
-                <span> ({ownerName})</span>
-              ) : null}
-            </a>
-          ) : null}
-          {link && owner && date ? (
-            <span> - {date}</span>
-          ) : null}
         </div>
         <img
           alt={title}
@@ -58,8 +44,6 @@ Lightbox.propTypes = {
     date: PropTypes.string,
     description: PropTypes.string,
     link: PropTypes.string,
-    owner: PropTypes.string,
-    ownerName: PropTypes.string,
     title: PropTypes.string.isRequired,
     url: PropTypes.string
   }).isRequired
