@@ -10,7 +10,7 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { page: "Home", width: "100%", height: 1170, bgColor: "#333" };
+        this.state = { page: "Gallery", width: "100%", height: 1170, bgColor: "#333" };
         this.changePage = this.changePage.bind(this);
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
@@ -50,10 +50,8 @@ class App extends Component {
             return <GalleryPage galleryId="72157710017493861"/>
         } else if (page === "Home") {
             return <WelcomePage width={this.state.width} height={this.state.height} name="Welcome" />
-        } else if (page === "Lucas") {
-            return <LucasPage galleryId="72157711165736866"/>
-        } else if (page === "Elizabeth") {
-            return <ElizabethPage galleryId="72157711169399278"/>
+        } else if (page === "Europe") {
+            return <LucasPage galleryId="72157712858753802"/>
         }
     }
 
