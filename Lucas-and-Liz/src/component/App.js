@@ -5,7 +5,7 @@ import logo from '../assets/LucasAndLizLogo.png'
 import GalleryPage from './pages/GalleryPage'
 import LucasPage from './pages/LucasPage'
 import WelcomePage from './pages/WelcomePage'
-import ElizabethPage from './pages/ElizabethPage'
+import Video from './pages/Video'
 class App extends Component {
 
     constructor(props) {
@@ -52,6 +52,8 @@ class App extends Component {
             return <WelcomePage width={this.state.width} height={this.state.height} name="Welcome" />
         } else if (page === "Europe") {
             return <LucasPage galleryId="72157712858753802"/>
+        } else if (page === "Video") {
+            return <Video/>
         }
     }
 
