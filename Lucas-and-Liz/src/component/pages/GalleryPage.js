@@ -5,10 +5,6 @@ import Gallery from '../PhotoGrid';
 class GalleryPage extends Component {
 
     render() {
-        var screenSize = {
-            width: this.props.width,
-            height: this.props.height,
-        }
         return (
             <div style={this.screenSize}>
                     <Gallery galleryId={this.props.galleryId}/>

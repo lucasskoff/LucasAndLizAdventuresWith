@@ -10,10 +10,6 @@ import Photo from './Photo';
  * Photo container
  */
 export default class PhotoContainer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {onSelect, photo, scrollPosition} = this.props;
 

@@ -5,7 +5,7 @@ import logo from '../assets/LucasAndLizLogo.png'
 import GalleryPage from './pages/GalleryPage'
 import LucasPage from './pages/LucasPage'
 import WelcomePage from './pages/WelcomePage'
-import Video from './pages/Video'
+import Video from './pages/VideoPage'
 class App extends Component {
 
     constructor(props) {
