@@ -11,13 +11,9 @@ import './lightbox.css';
  * Lightbox Presentational component
  */
 export default class Lightbox extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {onClose} = this.props;
-    const {date, description, link, title, url} = this.props.photo;
+    const {description, title, url} = this.props.photo;
 
     return (
       <div className="lightbox" onClick={onClose}>
