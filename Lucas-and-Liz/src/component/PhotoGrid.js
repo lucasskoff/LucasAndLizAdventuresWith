@@ -37,7 +37,7 @@ class Gallery extends Component {
             };
         });
 
-        return photos;
+        return photos.reverse();
     }
 
     componentDidMount() {
