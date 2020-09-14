@@ -11,10 +11,6 @@ import './photo.css';
  * Photo presentational component
  */
 class Photo extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {scrollPosition, title, url} = this.props;
 
