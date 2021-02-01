@@ -52,6 +52,8 @@ class App extends Component {
             return <WelcomePage width={this.state.width} height={this.state.height} name="Welcome" />
         } else if (page === "Europe") {
             return <LucasPage galleryId="72157712858753802"/>
+        }else if (page === "Sister") {
+            return <LucasPage galleryId="72157718119689792"/>
         } else if (page === "Video") {
             return <Video/>
         }
