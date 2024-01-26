@@ -4,6 +4,7 @@ import NavBar from './NavBar';
 import logo from '../assets/LucasAndLizLogo.png'
 import GalleryPage from './pages/GalleryPage'
 import LucasPage from './pages/LucasPage'
+import EuropePage from './pages/EuropePage'
 import WelcomePage from './pages/WelcomePage'
 import Video from './pages/VideoPage'
 class App extends Component {
@@ -51,8 +52,8 @@ class App extends Component {
         } else if (page === "Home") {
             return <WelcomePage width={this.state.width} height={this.state.height} name="Welcome" />
         } else if (page === "Europe") {
-            return <LucasPage galleryId="72157712858753802"/>
-        }else if (page === "Sister") {
+            return <EuropePage galleryId="72157712858753802"/>
+        } else if (page === "Sister") {
             return <LucasPage galleryId="72157718119689792"/>
         } else if (page === "Video") {
             return <Video/>
