@@ -30,8 +30,8 @@ class NavBar extends Component {
                 <ul className='topnav' onClick={this.handleClick}>
                     <li style={isMobile ? liStyleMobile : liStylePC}><span id="Gallery" className={this.currentActive === "Gallery" ? "active" : "inactive"}>Gallery</span></li>
                     <li style={isMobile ? liStyleMobile : liStylePC}><span id="Sister" className={this.currentActive === "Sister" ? "active" : "inactive"}>{'Sister\'s Visit'}</span></li>
-                    <li style={isMobile ? liStyleMobile : liStylePC}><span id="Europe" className={this.currentActive === "Europe" ? "active" : "inactive"}>{'Europe 2019'}</span></li>
-                    <li style={isMobile ? liStyleMobile : liStylePC}><span id="Video" className={this.currentActive === "Video" ? "active" : "inactive"}>{'Bachata'}</span></li>
+                    <li style={isMobile ? liStyleMobile : liStylePC}><span id="Europe" className={this.currentActive === "Europe" ? "active" : "inactive"}>Europe</span></li>
+                    <li style={isMobile ? liStyleMobile : liStylePC}><span id="Video" className={this.currentActive === "Video" ? "active" : "inactive"}>Bachata</span></li>
                 </ul>
             </div>
         );
